@@ -5,6 +5,7 @@ import { CalendarIcon, LocationIcon, DownloadIcon } from '@semantic/components/i
 import { METADATA, PROFILE } from '@semantic/constants';
 
 import { ContactButtons } from './_components/contact-buttons';
+import { SchoolAchievements } from './_components/school-achievements';
 import Card from '../_components/profile-grid/card';
 
 const AboutPage = async () => {
@@ -130,20 +131,24 @@ const AboutPage = async () => {
         <section className="column gap-6">
           <h3 className="h3 text-[var(--color-gray-light)]">Education</h3>
           <ul className="column gap-6">
-            <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
-              <div className="column">
-                <span className="text-lg font-bold text-[var(--color-gray-bold)]">
-                  계원예술대학교
-                </span>
-                <div className="flex items-center gap-2 text-[var(--color-gray-mid)]">
-                  <span>디지털미디어디자인과</span>
-                  <span className="w-[1px] h-3 bg-[var(--color-border)]" />
-                  <span>기획세부전공</span>
+            <li className="flex flex-col gap-3">
+              <div className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
+                <div className="column">
+                  <span className="text-lg font-bold text-[var(--color-gray-bold)]">
+                    계원예술대학교
+                  </span>
+                  <div className="flex items-center gap-2 text-[var(--color-gray-mid)]">
+                    <span>디지털미디어디자인과</span>
+                    <span className="w-[1px] h-3 bg-[var(--color-border)]" />
+                    <span>기획세부전공</span>
+                  </div>
                 </div>
+                <span className="text-[var(--color-gray-mid)] font-mono text-sm">
+                  2024.03 - 2025.02
+                </span>
               </div>
-              <span className="text-[var(--color-gray-mid)] font-mono text-sm">
-                2024.03 - 2025.02
-              </span>
+              {/* School Achievements */}
+              <SchoolAchievements />
             </li>
             <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
               <div className="column">
@@ -652,7 +657,7 @@ const AboutPage = async () => {
                 <span>Facepay Onboarding Assistant</span>
               </div>
               <p className="text-[var(--color-gray-mid)] leading-relaxed">
-                주요 업무 및 성과에 대한 설명을 이곳에 작성합니다.
+                토스 페이스페이 필드 테스트 및 가맹점·VAN 대리점 커뮤니케이션 지원
               </p>
             </li>
             <li className="flex flex-col gap-2">
@@ -670,7 +675,7 @@ const AboutPage = async () => {
                 <span>기획경영본부 정보화실 소속</span>
               </div>
               <p className="text-[var(--color-gray-mid)] leading-relaxed">
-                주요 업무 및 성과에 대한 설명을 이곳에 작성합니다.
+                본사 이전 대비 전산 자산·문서 정리 및 그룹웨어 유틸리티 페이지 퍼블리싱
               </p>
             </li>
           </ul>
