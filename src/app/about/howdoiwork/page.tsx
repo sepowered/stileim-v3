@@ -1,5 +1,6 @@
+import PrismaticBurst from '@semantic/components/PrismaticBurst';
+
 import { BackButton } from './_components/back-button';
-import { HeroSection } from '../../_components/hero-section';
 
 const HowDoIWorkPage = () => {
   return (
@@ -7,11 +8,31 @@ const HowDoIWorkPage = () => {
       <div className="pt-4">
         <BackButton />
       </div>
-      <HeroSection
-        title="borderless,limitless."
-        subtitle="경계없는,한계없는. 기획자 노권후입니다."
-        description={`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.\n경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.`}
-      />
+
+      <section className="relative flex flex-col w-full min-h-[500px] tablet:min-h-0 tablet:aspect-[1.8/1] border border-[var(--color-border)] rounded-[0.875rem] overflow-hidden my-8">
+        <div className="absolute inset-0 z-0">
+          <PrismaticBurst
+            intensity={2.2}
+            speed={0.2}
+            animationType="rotate3d"
+            colors={['#FF8080', '#FFBF80', '#FFFF80', '#80FF80', '#8080FF', '#A57FC0', '#C77FFF']}
+            mixBlendMode="multiply"
+            rayCount={0}
+          />
+        </div>
+        <div className="relative z-10 flex-1 flex flex-col justify-center px-8 py-12 tablet:py-0 tablet:px-16 gap-4 pointer-events-none">
+          <span className="text-[1.75rem] max-[425px]:text-xl font-medium text-[var(--color-gray-mid)] font-[family-name:var(--font-instrument-serif)]">
+            borderless,limitless.
+          </span>
+          <h1 className="text-3xl tablet:text-4xl font-bold text-[var(--color-gray-bold)]">
+            경계없는,한계없는. 기획자 노권후입니다.
+          </h1>
+          <p className="text-base tablet:text-lg text-[var(--color-gray-mid)] whitespace-pre-wrap leading-relaxed">
+            {`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.\n경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.`}
+          </p>
+        </div>
+      </section>
+
       <section className="column gap-16 pb-20">
         <div className="column gap-10">
           <h2 className="text-3xl tablet:text-4xl font-bold text-[var(--color-gray-accent)] leading-tight">
