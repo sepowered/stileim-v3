@@ -1,7 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { createBlur } from '@libs/image';
-import { CalendarIcon, LocationIcon, DownloadIcon } from '@semantic/components/icon';
+import {
+  CalendarIcon,
+  LocationIcon,
+  DownloadIcon,
+  ChevronRightIcon,
+} from '@semantic/components/icon';
 import { METADATA, PROFILE } from '@semantic/constants';
 
 import { ContactButtons } from './_components/contact-buttons';
@@ -124,6 +130,15 @@ const AboutPage = async () => {
               해결하고자 합니다.
             </p>
             <p>경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.</p>
+            <Link
+              href="/about/howdoiwork"
+              className="flex items-center gap-1 text-[var(--color-gray-mid)] hover:text-[var(--color-gray-bold)] transition-colors duration-200 group w-fit"
+            >
+              <span className="text-base max-[426px]:text-sm font-medium">
+                경계없는,한계없이. 일하는 방법 알아보기
+              </span>
+              <ChevronRightIcon className="w-5 h-5 max-[426px]:w-4 max-[426px]:h-4 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
           </div>
         </section>
 
