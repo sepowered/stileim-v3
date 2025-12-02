@@ -21,13 +21,13 @@ const HowDoIWorkPage = () => {
           />
         </div>
         <div className="relative z-10 flex-1 flex flex-col justify-center px-8 py-12 tablet:py-0 tablet:px-16 gap-4 pointer-events-none">
-          <span className="text-[1.75rem] max-[425px]:text-xl font-medium text-[var(--color-gray-mid)] font-[family-name:var(--font-instrument-serif)]">
+          <span className="text-[1.75rem] max-[425px]:text-xl font-medium text-white font-[family-name:var(--font-instrument-serif)]">
             borderless,limitless.
           </span>
-          <h1 className="text-3xl tablet:text-4xl font-bold text-[var(--color-gray-bold)]">
+          <h1 className="text-3xl tablet:text-4xl font-bold text-white">
             경계없는,한계없는. 기획자 노권후입니다.
           </h1>
-          <p className="text-base tablet:text-lg text-[var(--color-gray-mid)] whitespace-pre-wrap leading-relaxed">
+          <p className="text-base tablet:text-lg text-white/80 whitespace-pre-wrap leading-relaxed">
             {`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.\n경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.`}
           </p>
         </div>
