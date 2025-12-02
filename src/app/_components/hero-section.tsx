@@ -54,7 +54,7 @@ export const HeroSection = ({
               className="flex items-center gap-1 text-[var(--color-gray-mid)] hover:text-[var(--color-gray-bold)] transition-colors duration-200 group"
             >
               <span className="text-lg max-[426px]:text-sm font-medium">
-                경계없는,한계없이. 일하는 방법 알아보기
+                경계없이,한계없이. 일하는 방법 알아보기
               </span>
               <ChevronRightIcon className="w-5 h-5 max-[426px]:w-4 max-[426px]:h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>

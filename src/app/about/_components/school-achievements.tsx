@@ -19,7 +19,7 @@ export const SchoolAchievements = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-1 text-sm text-[var(--color-gray-mid)] hover:text-[var(--color-gray-bold)] transition-colors w-fit"
       >
-        <span>교내 업적 {isOpen ? '접기' : '더보기'}</span>
+        <span>교내 활동 {isOpen ? '접기' : '더보기'}</span>
         <motion.svg
           width="16"
           height="16"
