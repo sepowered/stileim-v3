@@ -19,8 +19,11 @@ export const ProfileGrid = async () => {
         <h3 id="profile-heading" className="h3 text-[var(--color-gray-light)]">
           Profile
         </h3>
-        <Link href="/about" className="block w-full transition-transform active:scale-[0.98]">
-          <Card.Root style={{ backgroundColor: PROFILE.cardBackgroundColor }}>
+        <Link
+          href="/about"
+          className="block w-full mt-[1.875rem] transition-transform active:scale-[0.98]"
+        >
+          <Card.Root className="mt-0" style={{ backgroundColor: PROFILE.cardBackgroundColor }}>
             <Card.Content>
               <div
                 className="row-between flex-col h-full items-start"

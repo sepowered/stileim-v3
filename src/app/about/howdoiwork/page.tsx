@@ -36,7 +36,7 @@ const HowDoIWorkPage = () => {
       <section className="column gap-16 pb-20">
         <div className="column gap-10">
           <h2 className="text-3xl tablet:text-4xl font-bold text-[var(--color-gray-accent)] leading-tight">
-            권후가 어떻게 경계없이,
+            권후는 어떻게 경계없이,
             <br className="block tablet:hidden" />
             한계없이 일할 수 있는걸까?
           </h2>
