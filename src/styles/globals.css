@@ -58,7 +58,7 @@
     list-style: none;
   }
 
-  [data-mdx-article] ol li::before {
+  [data-mdx-article] ol > li::before {
     content: counter(basics-ol) '. ';
     counter-increment: basics-ol;
     position: absolute;
@@ -67,7 +67,7 @@
     font-size: var(--text-base);
   }
 
-  [data-mdx-article] ul li::before {
+  [data-mdx-article] ul > li::before {
     content: '•';
     position: absolute;
     left: 0;
