@@ -206,11 +206,19 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
         </span>
       );
     },
-    ImageColumn: ({ children, ...props }: ComponentProps<'div'>) => (
-      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-4 w-full [&>p]:contents" {...props}>
-        {children}
-      </div>
-    ),
+    ImageColumn: ({ children, cols = 3, ...props }: ComponentProps<'div'> & { cols?: number }) => {
+      const gridCols =
+        {
+          2: 'tablet:grid-cols-2',
+          3: 'tablet:grid-cols-3',
+        }[cols] || 'tablet:grid-cols-3';
+
+      return (
+        <div className={`grid grid-cols-1 ${gridCols} gap-4 w-full [&>p]:contents`} {...props}>
+          {children}
+        </div>
+      );
+    },
     Columns: ({ children, cols = 2, ...props }: ComponentProps<'div'> & { cols?: number }) => {
       const gridCols =
         {
