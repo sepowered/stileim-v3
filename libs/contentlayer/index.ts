@@ -103,6 +103,7 @@ export const Project = defineDocumentType(() => ({
     awards: { type: 'string', required: false },
     capabilities: { type: 'list', of: { type: 'string' }, required: false },
     order: { type: 'number', required: false },
+    r2Folder: { type: 'string', required: false },
   },
   computedFields: {
     slug: {
@@ -135,7 +136,7 @@ export const Project = defineDocumentType(() => ({
     },
     body: {
       type: 'mdx',
-      resolve: (doc) => transformMdxImages(doc),
+      resolve: (doc) => transformMdxImages(doc, doc.r2Folder, 'projects'),
     },
   },
 }));
