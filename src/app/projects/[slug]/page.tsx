@@ -101,7 +101,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         </div>
         <MdxComponent code={project.body.code} blurDataURLs={project.blurMap} />
 
-        <Divider className="mb-[3.5rem]" />
+        <Divider className="my-[3.5rem]" />
         <Footer {...project} />
       </article>
 

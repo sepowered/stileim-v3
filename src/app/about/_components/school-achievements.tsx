@@ -11,6 +11,7 @@ export const SchoolAchievements = () => {
     { description: '영상기초 연합PT', period: '2024학년도 1학기' },
     { description: '콘텐츠디자인 연합PT', period: '2024학년도 2학기' },
     { description: '캡스톤디자인 PT우수작', period: '2025학년도 2학기' },
+    { description: '캡스톤디자인 연합PT', period: '2025학년도 2학기' },
     { description: '프로젝트메니징 연합PT', period: '2025학년도 2학기' },
   ];
 

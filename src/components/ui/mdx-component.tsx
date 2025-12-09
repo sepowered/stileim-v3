@@ -125,7 +125,7 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
       </h2>
     ),
     h3: ({ children, ...props }: ComponentProps<'h3'>) => (
-      <h3 className="pt-9 text-md" {...props}>
+      <h3 className="pt-9 mb-3 text-md" {...props}>
         {children}
       </h3>
     ),
@@ -164,7 +164,7 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
       ...props
     }: ComponentProps<'aside'> & { icon?: React.ReactNode }) => (
       <aside
-        className="flex flex-row items-start gap-3 p-4 border border-[var(--color-border)] rounded-[0.625rem] bg-[var(--color-background05)]"
+        className="flex flex-row items-start gap-3 p-4 my-5 border border-[var(--color-border)] rounded-[0.625rem] bg-[var(--color-background05)]"
         {...props}
       >
         {icon && <span className="text-xl leading-[1.6] select-none">{icon}</span>}
@@ -211,6 +211,20 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
         {children}
       </div>
     ),
+    Columns: ({ children, cols = 2, ...props }: ComponentProps<'div'> & { cols?: number }) => {
+      const gridCols =
+        {
+          2: 'tablet:grid-cols-2',
+          3: 'tablet:grid-cols-3',
+          4: 'tablet:grid-cols-4',
+        }[cols] || 'tablet:grid-cols-2';
+
+      return (
+        <div className={`grid grid-cols-1 ${gridCols} gap-5 w-full`} {...props}>
+          {children}
+        </div>
+      );
+    },
   };
 
   const MDXComponent = useMDXComponent(code);

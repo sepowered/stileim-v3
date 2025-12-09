@@ -1,7 +1,7 @@
 export const METADATA = {
   SITE: {
     URL: 'https://stile.im',
-    NAME: 'stile',
+    NAME: 'Kwon Roh',
     DESCRIPTION: '경계없는, 한계없는. 기획자 노권후 입니다.',
     PREVIEW_IMAGE: 'https://semantic.nylonbricks.com/static/preview.png',
     LANGUAGE: 'ko-KR',
