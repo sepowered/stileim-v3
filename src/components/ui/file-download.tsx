@@ -55,7 +55,7 @@ export const FileDownload = ({
         }`}
       >
         <div className="flex items-center gap-2">
-          <span className="text-xl">{type === 'pdf' ? '📄' : '📎'}</span>
+          <span className="text-xl">{type === 'pdf' ? '📎' : '📎'}</span>
           <span className="font-medium text-[var(--color-gray-bold)]">{children}</span>
         </div>
         <svg
