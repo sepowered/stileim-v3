@@ -57,7 +57,11 @@ const HomePage = () => {
             <PlusIcon />
           </Link>
         </div>
-        <ProjectList projects={featuredProjects} className="desktop:grid-cols-2 gap-[4.0625rem]" />
+        <ProjectList
+          projects={featuredProjects}
+          className="desktop:grid-cols-2 gap-[4.0625rem]"
+          hideAward={true}
+        />
       </section>
 
       <section

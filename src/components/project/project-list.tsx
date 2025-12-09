@@ -7,9 +7,15 @@ import { ProjectCard } from './project-card';
 
 type ProjectListProps = ComponentProps<'ul'> & {
   projects: Project[];
+  hideAward?: boolean;
 };
 
-export const ProjectList = ({ projects, className, ...props }: ProjectListProps) => {
+export const ProjectList = ({
+  projects,
+  className,
+  hideAward = false,
+  ...props
+}: ProjectListProps) => {
   return (
     <ul
       className={twMerge(
@@ -19,7 +25,7 @@ export const ProjectList = ({ projects, className, ...props }: ProjectListProps)
       {...props}
     >
       {projects.map((project) => (
-        <ProjectCard key={project._id} project={project} />
+        <ProjectCard key={project._id} project={project} hideAward={hideAward} />
       ))}
     </ul>
   );

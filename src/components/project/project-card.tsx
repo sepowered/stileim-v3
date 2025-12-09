@@ -9,9 +9,15 @@ import { ROUTES } from '@semantic/constants';
 
 type ProjectCardProps = ComponentProps<'li'> & {
   project: Project;
+  hideAward?: boolean;
 };
 
-export const ProjectCard = ({ project, className, ...props }: ProjectCardProps) => {
+export const ProjectCard = ({
+  project,
+  className,
+  hideAward = false,
+  ...props
+}: ProjectCardProps) => {
   const { title, description, coverImage, coverImageBlur, tags, slug } = project;
 
   return (
@@ -50,7 +56,7 @@ export const ProjectCard = ({ project, className, ...props }: ProjectCardProps) 
           </h3>
         </Link>
         <p className="line-clamp-2 text-sm text-[var(--color-gray-text)]">{description}</p>
-        {project.awards && (
+        {!hideAward && project.awards && (
           <div className="mt-1 flex items-center gap-2 rounded-lg bg-[var(--color-background05)] px-3 py-1">
             <span className="text-base">🏆</span>
             <span className="text-sm font-medium text-[var(--color-gray-bold)]">

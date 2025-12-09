@@ -207,7 +207,7 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
       );
     },
     ImageColumn: ({ children, ...props }: ComponentProps<'div'>) => (
-      <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 w-full [&>p]:contents" {...props}>
+      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-4 w-full [&>p]:contents" {...props}>
         {children}
       </div>
     ),
