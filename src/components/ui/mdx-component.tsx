@@ -6,6 +6,7 @@ import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { ComponentProps, useEffect, useState } from 'react';
 
 import { FileDownload } from './file-download';
+import { LinkEmbed } from './link-embed';
 
 const DownloadButton = ({
   children,
@@ -175,6 +176,7 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
       <DownloadButton {...props} />
     ),
     FileDownload: (props: ComponentProps<typeof FileDownload>) => <FileDownload {...props} />,
+    LinkEmbed: (props: ComponentProps<typeof LinkEmbed>) => <LinkEmbed {...props} />,
     img: ({
       src,
       alt,
