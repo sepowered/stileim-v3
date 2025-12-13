@@ -725,14 +725,45 @@ const AboutPage = async () => {
           </ul>
         </section>
 
-        {/* Awards */}
+        {/* Achievements & Activities */}
         <section className="column gap-6">
-          <h3 className="h3 text-[var(--color-gray-light)]">Awards</h3>
+          <h3 className="h3 text-[var(--color-gray-light)]">Achievements & Activities</h3>
           <ul className="column gap-8">
             <li className="flex flex-col gap-2">
               <div className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4 items-start tablet:items-center">
+                <span className="text-lg font-bold text-[var(--color-gray-bold)]">
+                  2026 GDGoC 연합해커톤 운영진
+                </span>
+                <span className="text-[var(--color-gray-mid)] font-mono text-sm">
+                  2025.11 - 현재
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-[var(--color-gray-accent)] font-medium">
+                <span>Google Developers Group on Campus (GDGoC) 18개 챕터 연합 주최</span>
+                <span className="w-[1px] h-3 bg-[var(--color-border)]" />
+                <span>브랜딩·디자인팀 리더</span>
+              </div>
+            </li>
+
+            <li className="flex flex-col gap-2">
+              <div className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4 items-start tablet:items-center">
+                <span className="text-lg font-bold text-[var(--color-gray-bold)]">
+                  2025 GDGoC 연합해커톤 운영진
+                </span>
+                <span className="text-[var(--color-gray-mid)] font-mono text-sm">
+                  2024.11 - 2025.01
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-[var(--color-gray-accent)] font-medium">
+                <span>Google Developers Group on Campus (GDGoC) 20개 챕터 연합 주최</span>
+                <span className="w-[1px] h-3 bg-[var(--color-border)]" />
+                <span>디자인팀 멤버</span>
+              </div>
+            </li>
+            <li className="flex flex-col gap-2">
+              <div className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4 items-start tablet:items-center">
                 <a
-                  href="https://rokaf.airforce.mil.kr/hackathon/688/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGaGFja2F0aG9uJTJGNjE3JTJGMzUxNTIlMkZhcnRjbFZpZXcuZG8lM0ZiYnNDbFNlcSUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhZ2UlM0QxJTI2cmdzRW5kZGVTdHIlM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZzcmNoV3JkJTNEJTI2cGFzc3dvcmQlM0QlMjZzcmNoQ29sdW1uJTNEJTI2"
+                  href="https://rokaf.airforce.mil.kr/hackathon/688/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGaGFja2F0aG9uJTJGNjE3JTJGMzUxNTIlMkZhcnRjbFZpZXcuZG8lM0ZiYmNDbFNlcSUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhZ2UlM0QxJTI2cmdzRW5kZGVTdHIlM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZzcmNoV3JkJTNEJTI2cGFzc3dvcmQlM0QlMjZzcmNoQ29sdW1uJTNEJTI2"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1 text-lg font-bold text-[var(--color-gray-bold)] border-b border-[var(--color-background06)] hover:opacity-70 transition-opacity duration-150"
@@ -955,6 +986,19 @@ const AboutPage = async () => {
             <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
               <div className="column">
                 <span className="text-lg font-bold text-[var(--color-gray-bold)]">
+                  CSS Layout 마스터클래스 수료
+                </span>
+                <div className="flex items-center gap-2 text-[var(--color-gray-mid)]">
+                  <span>Nomad Coders</span>
+                  <span className="w-[1px] h-3 bg-[var(--color-border)]" />
+                  <span>HTML, CSS, SCSS, Flexbox</span>
+                </div>
+              </div>
+              <span className="text-[var(--color-gray-mid)] font-mono text-sm">2024.08</span>
+            </li>
+            <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
+              <div className="column">
+                <span className="text-lg font-bold text-[var(--color-gray-bold)]">
                   Japanese Language Proficiency Test N3
                 </span>
                 <span className="text-[var(--color-gray-mid)]">독립행정법인 일본국제교류기금</span>
@@ -995,6 +1039,19 @@ const AboutPage = async () => {
                 </div>
               </div>
               <span className="text-[var(--color-gray-mid)] font-mono text-sm">2021.11</span>
+            </li>
+            <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
+              <div className="column">
+                <span className="text-lg font-bold text-[var(--color-gray-bold)]">
+                  코코아 클론 2주 완성반 온라인 부트캠프 수료
+                </span>
+                <div className="flex items-center gap-2 text-[var(--color-gray-mid)]">
+                  <span>Nomad Coders</span>
+                  <span className="w-[1px] h-3 bg-[var(--color-border)]" />
+                  <span>HTML, CSS, Flexbox, Github</span>
+                </div>
+              </div>
+              <span className="text-[var(--color-gray-mid)] font-mono text-sm">2021.02</span>
             </li>
             <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
               <div className="column">
