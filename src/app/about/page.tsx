@@ -9,6 +9,7 @@ import {
   ChevronRightIcon,
 } from '@semantic/components/icon';
 import { ResumeDownloadButton } from '@semantic/components/resume-download-button';
+import { LinkEmbed } from '@semantic/components/ui/link-embed';
 import { METADATA, PROFILE } from '@semantic/constants';
 
 import { ContactButtons } from './_components/contact-buttons';
@@ -766,7 +767,13 @@ const AboutPage = async () => {
                 <span>디자인팀 멤버</span>
               </div>
               <div className="column gap-1 text-[var(--color-gray-mid)] leading-relaxed">
-                <p>{/* 설명글을 여기에 작성하세요 */}</p>
+                <p>
+                  현장 경험을 고려한 참가자 동선 설계 등 운영 업무 수행 및 정보 전달을 위한 디자인
+                  리소스 제작
+                </p>
+              </div>
+              <div className="mt-2">
+                <LinkEmbed url="https://yozm.wishket.com/magazine/detail/2974/" variant="mention" />
               </div>
             </li>
             <li className="flex flex-col gap-2">

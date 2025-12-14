@@ -10,6 +10,7 @@ type LinkEmbedProps = ComponentProps<'a'> & {
   description?: string;
   thumbnail?: string;
   favicon?: string;
+  variant?: 'card' | 'mention';
 };
 
 interface LinkMetadata {
@@ -25,6 +26,7 @@ export const LinkEmbed = ({
   description: manualDescription,
   thumbnail: manualThumbnail,
   favicon: manualFavicon,
+  variant = 'card',
   ...props
 }: LinkEmbedProps) => {
   const [metadata, setMetadata] = useState<LinkMetadata | null>(null);
@@ -46,7 +48,13 @@ export const LinkEmbed = ({
 
   useEffect(() => {
     // If all manual props are provided, skip fetching
-    if (manualTitle && manualDescription && manualThumbnail) {
+    // For mention variant, we only need title and favicon
+    const hasRequiredProps =
+      variant === 'mention'
+        ? manualTitle && manualFavicon
+        : manualTitle && manualDescription && manualThumbnail;
+
+    if (hasRequiredProps) {
       setIsLoading(false);
       return;
     }
@@ -72,7 +80,7 @@ export const LinkEmbed = ({
     };
 
     fetchMetadata();
-  }, [url, manualTitle, manualDescription, manualThumbnail]);
+  }, [url, manualTitle, manualDescription, manualThumbnail, manualFavicon, variant]);
 
   if (error) {
     // Fallback to simple link on error
@@ -91,6 +99,14 @@ export const LinkEmbed = ({
 
   if (isLoading) {
     // Loading skeleton
+    if (variant === 'mention') {
+      return (
+        <div className="inline-flex items-center gap-1.5 h-6 animate-pulse">
+          <div className="w-4 h-4 rounded bg-[var(--color-background05)]" />
+          <div className="h-4 w-24 rounded bg-[var(--color-background05)]" />
+        </div>
+      );
+    }
     return (
       <div className="block w-full">
         <div className="flex flex-col mobile:flex-row gap-4 p-4 border border-[var(--color-border)] rounded-xl bg-[var(--color-background)] overflow-hidden animate-pulse">
@@ -105,6 +121,48 @@ export const LinkEmbed = ({
           </div>
         </div>
       </div>
+    );
+  }
+
+  if (variant === 'mention') {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[var(--color-border)] transition-colors duration-200 hover:bg-[var(--color-background03)] group"
+        {...props}
+      >
+        {!faviconError && (
+          <img
+            src={favicon}
+            alt=""
+            className="w-3.5 h-3.5 flex-shrink-0 rounded-full"
+            loading="lazy"
+            onError={() => setFaviconError(true)}
+          />
+        )}
+        {faviconError && (
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="flex-shrink-0 text-[var(--color-gray-light)]"
+          >
+            <path
+              d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+              fill="currentColor"
+              fillRule="evenodd"
+              clipRule="evenodd"
+            />
+          </svg>
+        )}
+        <span className="text-[var(--color-gray-bold)] text-sm group-hover:text-[var(--color-gray-bold)] transition-colors">
+          {title}
+        </span>
+      </a>
     );
   }
 
