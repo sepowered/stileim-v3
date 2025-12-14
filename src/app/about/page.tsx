@@ -815,7 +815,7 @@ const AboutPage = async () => {
                   설문 데이터 활용
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
-                  Role: 팀장, 기획, UI/UX, 발표 및 장표 담당
+                  역할: 팀장, 기획, UI/UX, 발표 및 장표 담당
                 </p>
               </div>
             </li>
@@ -838,7 +838,7 @@ const AboutPage = async () => {
                   식권 서비스 기획
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
-                  Role: 팀장, 기획, UI/UX, 발표 및 장표 담당
+                  역할: 팀장, 기획, UI/UX, 발표 및 장표 담당
                 </p>
               </div>
             </li>
@@ -865,7 +865,7 @@ const AboutPage = async () => {
                   찾던 중 Toss의 송금 API와 연동
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
-                  Role: 팀장, 기획, 장표 디자인
+                  역할: 팀장, 기획, 장표 디자인
                 </p>
               </div>
             </li>
@@ -906,7 +906,7 @@ const AboutPage = async () => {
                   공유를 통한 급식 개선 솔루션
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
-                  Role: 팀장, 기획, UI/UX, 발표 및 장표 담당
+                  역할: 팀장, 기획, UI/UX, 발표 및 장표 담당
                 </p>
               </div>
             </li>
@@ -947,7 +947,7 @@ const AboutPage = async () => {
                   프로덕트
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
-                  Role: 장표 및 리소스 디자인
+                  역할: 장표 및 리소스 디자인
                 </p>
               </div>
             </li>
@@ -988,7 +988,7 @@ const AboutPage = async () => {
                   시정될 수 있도록 하는 프로덕트
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
-                  Role: 장표 및 리소스 디자인
+                  역할: 장표 및 리소스 디자인
                 </p>
               </div>
             </li>
