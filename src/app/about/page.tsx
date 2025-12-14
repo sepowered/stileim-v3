@@ -89,8 +89,8 @@ const AboutPage = async () => {
           </Card.Root>
 
           <div className="flex flex-col tablet:flex-row w-full">
-            <a
-              href="#"
+            <ResumeDownloadButton
+              fileKey="about/노권후_이력서.pdf"
               className="relative overflow-hidden flex-1 flex items-center justify-center gap-2 px-4 py-3 hover:brightness-95 transition-all border-l border-b border-r border-t-0 border-[rgba(0,0,0,0.03)] rounded-none tablet:rounded-bl-[0.875rem] shadow-[inset_0_-0.125rem_0.125rem_rgba(255,255,255,0.3)]"
               style={{
                 backgroundColor: PROFILE.cardBackgroundColor,
@@ -102,7 +102,7 @@ const AboutPage = async () => {
                 <DownloadIcon size={20} />
                 <span className="font-medium">이력서 다운로드</span>
               </div>
-            </a>
+            </ResumeDownloadButton>
             <ResumeDownloadButton
               fileKey="about/노권후_자기소개서.pdf"
               className="relative overflow-hidden flex-1 flex items-center justify-center gap-2 px-4 py-3 hover:brightness-95 transition-all border-l border-b border-r border-t-0 tablet:border-l-0 border-[rgba(0,0,0,0.03)] rounded-b-[0.875rem] tablet:rounded-bl-none tablet:rounded-br-[0.875rem] shadow-[inset_0_-0.125rem_0.125rem_rgba(255,255,255,0.3)]"
@@ -130,7 +130,9 @@ const AboutPage = async () => {
               프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고, 기술과 경험을 연결해 문제를
               해결하고자 합니다.
             </p>
-            <p>경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.</p>
+            <p>
+              경계를 넘는 배움과 한계를 넘는 생각으로 문제를 끝까지 함께하는 기획자 노권후입니다.
+            </p>
             <Link
               href="/about/howdoiwork"
               className="flex items-center gap-1 text-[var(--color-gray-mid)] hover:text-[var(--color-gray-bold)] transition-colors duration-200 group w-fit"
@@ -744,6 +746,9 @@ const AboutPage = async () => {
                 <span className="w-[1px] h-3 bg-[var(--color-border)]" />
                 <span>브랜딩·디자인팀 리더</span>
               </div>
+              <div className="column gap-1 text-[var(--color-gray-mid)] leading-relaxed">
+                <p>GV Brand Sprint를 활용해 해커톤의 핵심 가치 정의 및 네이밍 의사결정 주도</p>
+              </div>
             </li>
 
             <li className="flex flex-col gap-2">
@@ -759,6 +764,9 @@ const AboutPage = async () => {
                 <span>Google Developers Group on Campus (GDGoC) 20개 챕터 연합 주최</span>
                 <span className="w-[1px] h-3 bg-[var(--color-border)]" />
                 <span>디자인팀 멤버</span>
+              </div>
+              <div className="column gap-1 text-[var(--color-gray-mid)] leading-relaxed">
+                <p>{/* 설명글을 여기에 작성하세요 */}</p>
               </div>
             </li>
             <li className="flex flex-col gap-2">
@@ -819,8 +827,8 @@ const AboutPage = async () => {
               </div>
               <div className="column gap-1 text-[var(--color-gray-mid)] leading-relaxed">
                 <p>
-                  교내 석식 문제와 고등학생 월 평균 용돈의 10%에 달하는 높은 식비로 어려움을 겪는
-                  학생들을 위해, 학교 인근 식당과 연계한 식권 서비스 기획
+                  교내 석식 문제와 높은 식비로 어려움을 겪는 학생들을 위해, 학교 인근 식당과 연계한
+                  식권 서비스 기획
                 </p>
                 <p className="text-sm text-[var(--color-gray-mid)] mt-1">
                   Role: 팀장, 기획, UI/UX, 발표 및 장표 담당
@@ -984,19 +992,6 @@ const AboutPage = async () => {
         <section className="column gap-6">
           <h3 className="h3 text-[var(--color-gray-light)]">Certificate</h3>
           <ul className="column gap-6">
-            <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
-              <div className="column">
-                <span className="text-lg font-bold text-[var(--color-gray-bold)]">
-                  CSS Layout 마스터클래스 수료
-                </span>
-                <div className="flex items-center gap-2 text-[var(--color-gray-mid)]">
-                  <span>Nomad Coders</span>
-                  <span className="w-[1px] h-3 bg-[var(--color-border)]" />
-                  <span>HTML, CSS, SCSS, Flexbox</span>
-                </div>
-              </div>
-              <span className="text-[var(--color-gray-mid)] font-mono text-sm">2024.08</span>
-            </li>
             <li className="flex flex-col tablet:flex-row tablet:justify-between gap-1 tablet:gap-4">
               <div className="column">
                 <span className="text-lg font-bold text-[var(--color-gray-bold)]">

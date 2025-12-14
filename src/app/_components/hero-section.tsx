@@ -37,7 +37,7 @@ export const HeroSection = ({
                 </h1>
               )}
               {subtitle && (
-                <h2 className="text-3xl tablet:text-4xl max-[768px]:text-lg max-[426px]:text-lg font-normal text-[var(--color-gray-accent)] leading-[1.4]">
+                <h2 className="text-3xl tablet:text-4xl max-[768px]:text-lg max-[426px]:text-lg font-normal text-[var(--color-gray-accent)] leading-[1.4] whitespace-pre-line">
                   {subtitle}
                 </h2>
               )}

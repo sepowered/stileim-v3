@@ -25,10 +25,12 @@ const HowDoIWorkPage = () => {
             borderless,limitless.
           </span>
           <h1 className="text-3xl tablet:text-4xl font-bold text-white">
-            경계없는,한계없는. 기획자 노권후입니다.
+            경계를 넘는 배움과 한계를 넘는 생각으로
+            <br className="hidden tablet:block" /> 문제를 끝까지 함께하는
+            <br className="hidden tablet:block" /> 기획자 노권후입니다.
           </h1>
           <p className="text-base tablet:text-lg text-white/80 whitespace-pre-wrap leading-relaxed">
-            {`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.\n경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.`}
+            {`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.`}
           </p>
         </div>
       </section>

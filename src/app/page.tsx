@@ -35,8 +35,8 @@ const HomePage = () => {
     <>
       <HeroSection
         title="borderless,limitless."
-        subtitle="경계없는,한계없는. 기획자 노권후입니다."
-        description={`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.\n경계없는 시선과 한계없이 생각하는 Problem Solver 노권후입니다.`}
+        subtitle={`경계를 넘는 배움과 한계를 넘는 생각으로\n문제를 끝까지 함께하는 기획자 노권후입니다.`}
+        description={`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.`}
         showLink={true}
       />
       <div className="pt-[4.375rem]">
