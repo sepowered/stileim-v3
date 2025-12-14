@@ -8,6 +8,7 @@ import {
   DownloadIcon,
   ChevronRightIcon,
 } from '@semantic/components/icon';
+import { ResumeDownloadButton } from '@semantic/components/resume-download-button';
 import { METADATA, PROFILE } from '@semantic/constants';
 
 import { ContactButtons } from './_components/contact-buttons';
@@ -102,8 +103,8 @@ const AboutPage = async () => {
                 <span className="font-medium">이력서 다운로드</span>
               </div>
             </a>
-            <a
-              href="#"
+            <ResumeDownloadButton
+              fileKey="about/노권후_자기소개서.pdf"
               className="relative overflow-hidden flex-1 flex items-center justify-center gap-2 px-4 py-3 hover:brightness-95 transition-all border-l border-b border-r border-t-0 tablet:border-l-0 border-[rgba(0,0,0,0.03)] rounded-b-[0.875rem] tablet:rounded-bl-none tablet:rounded-br-[0.875rem] shadow-[inset_0_-0.125rem_0.125rem_rgba(255,255,255,0.3)]"
               style={{
                 backgroundColor: PROFILE.cardBackgroundColor,
@@ -115,7 +116,7 @@ const AboutPage = async () => {
                 <DownloadIcon size={20} />
                 <span className="font-medium">자기소개서 다운로드</span>
               </div>
-            </a>
+            </ResumeDownloadButton>
           </div>
 
           <ContactButtons />

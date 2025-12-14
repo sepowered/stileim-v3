@@ -38,7 +38,7 @@ export const LinkEmbed = ({
   // Use manual props if provided, otherwise use fetched metadata
   const title = manualTitle || metadata?.title || url;
   const description = manualDescription || metadata?.description;
-  const thumbnail = manualThumbnail || metadata?.image;
+  const thumbnail = manualThumbnail || metadata?.image || '/static/preview.png';
   const favicon =
     manualFavicon ||
     metadata?.favicon ||
