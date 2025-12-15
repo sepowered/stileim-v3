@@ -1,5 +1,6 @@
 import '@semantic/styles/globals.css';
 
+import { Analytics } from '@vercel/analytics/next';
 import { type Metadata, type Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { PropsWithChildren } from 'react';
@@ -19,6 +20,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
           <ToastProvider>
             <Layout>{children}</Layout>
             <ChannelIO />
+            <Analytics />
           </ToastProvider>
         </ThemeProvider>
       </body>
