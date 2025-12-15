@@ -162,7 +162,8 @@ export const resolveR2Path = (
   }
 
   const cleanPath = imagePath.startsWith('./') ? imagePath.slice(2) : imagePath;
-  return `https://img.stile.im/${contentType}/${r2Folder}/${cleanPath}`;
+  const encodedPath = cleanPath.split('/').map(encodeURIComponent).join('/');
+  return `https://img.stile.im/${contentType}/${r2Folder}/${encodedPath}`;
 };
 
 export const createBlurMap = async (mdxFilePath: string, images: string[]): Promise<BlurMap> => {
@@ -205,6 +206,18 @@ export const transformMdxImages = (
 
       const jsxRegex = new RegExp(`src:\\s*["']${escapedPath}["']`, 'g');
       codeContent = codeContent.replace(jsxRegex, `src:"${webPath}"`);
+
+      // Try replacing encoded path in code content as MDX might encode it
+      try {
+        const encodedImagePath = encodeURIComponent(imagePath);
+        if (encodedImagePath !== imagePath) {
+          const escapedEncodedPath = encodedImagePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const encodedJsxRegex = new RegExp(`src:\\s*["']${escapedEncodedPath}["']`, 'g');
+          codeContent = codeContent.replace(encodedJsxRegex, `src:"${webPath}"`);
+        }
+      } catch {
+        // ignore encoding errors
+      }
     }
   }
 
