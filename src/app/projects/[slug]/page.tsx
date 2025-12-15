@@ -120,29 +120,29 @@ const getRecommendedProjects = (projects: Project[], slug: string): Project[] =>
   const idx = projects.findIndex((p) => p.slug === slug);
 
   if (idx === -1) {
-    return projects.slice(0, 4);
+    return projects.slice(0, 6);
   }
 
   const getProjects = (start: number, end: number) =>
     projects.slice(Math.max(0, start), Math.min(projects.length, end));
 
-  const prev = getProjects(idx - 2, idx);
-  const next = getProjects(idx + 1, idx + 3);
+  const prev = getProjects(idx - 3, idx);
+  const next = getProjects(idx + 1, idx + 4);
 
   let rec = [...prev, ...next];
 
-  if (rec.length < 4) {
-    const need = 4 - rec.length;
+  if (rec.length < 6) {
+    const need = 6 - rec.length;
     const isFront = idx < projects.length / 2;
     const isIncluded = (p: Project) => rec.some((r) => r.slug === p.slug);
 
     if (isFront) {
-      const more = getProjects(idx + 3, idx + 3 + need * 2)
+      const more = getProjects(idx + 4, idx + 4 + need * 2)
         .filter((p) => !isIncluded(p))
         .slice(0, need);
       rec = [...rec, ...more];
     } else {
-      const end = idx - 2;
+      const end = idx - 3;
       const more = getProjects(end - need * 2, end)
         .filter((p) => !isIncluded(p))
         .slice(0, need);

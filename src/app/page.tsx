@@ -24,7 +24,7 @@ const getFeaturedProjects = (projects: Project[]) => {
       if (b.order !== undefined) return 1;
       return dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1;
     })
-    .slice(0, 2);
+    .slice(0, 6);
 };
 
 const HomePage = () => {
@@ -59,7 +59,7 @@ const HomePage = () => {
         </div>
         <ProjectList
           projects={featuredProjects}
-          className="desktop:grid-cols-2 gap-[4.0625rem]"
+          className="desktop:grid-cols-2 gap-[4.0625rem] [&>li:nth-child(n+5)]:hidden desktop:[&>li:nth-child(n+5)]:flex"
           hideAward={true}
         />
       </section>

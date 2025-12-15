@@ -16,7 +16,10 @@ export const Recommend = ({ projects }: RecommendProps) => {
       >
         🦾 프로젝트 살펴보기
       </h3>
-      <ProjectList className="mt-[2.25rem] mb-[3.5rem]" projects={projects} />
+      <ProjectList
+        className="mt-[2.25rem] mb-[3.5rem] [&>li:nth-child(n+5)]:hidden desktop:[&>li:nth-child(n+5)]:flex"
+        projects={projects}
+      />
     </section>
   );
 };
