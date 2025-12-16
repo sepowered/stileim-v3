@@ -10,7 +10,7 @@ export const PROFILE = {
   contentTextColor: '#3b2249',
 
   userDetails: [
-    { title: 'Studying', content: 'Digital Product \nDesign & Planning' },
+    { title: 'Studying', content: 'Digital Product Planning' },
     { title: 'Location', content: 'Seoul, South Korea' },
   ],
 };
