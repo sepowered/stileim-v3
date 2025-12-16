@@ -24,7 +24,7 @@ const getFeaturedProjects = (projects: Project[]) => {
       if (b.order !== undefined) return 1;
       return dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1;
     })
-    .slice(0, 6);
+    .slice(0, 2);
 };
 
 const HomePage = () => {
