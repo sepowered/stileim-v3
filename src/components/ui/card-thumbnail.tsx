@@ -33,7 +33,7 @@ export const CardThumbnail = ({
       style={radiusVars}
     >
       {hasAward && (
-        <span className="absolute left-3 top-3 z-10 inline-flex max-w-[calc(100%-1.5rem)] items-center gap-1.5 rounded-[var(--thumbnail-inner-radius)] border border-[var(--color-border)] bg-[var(--color-toggle)] px-3 py-2 text-xs leading-none text-[var(--color-gray-accent)] backdrop-blur">
+        <span className="absolute left-3 top-3 z-10 inline-flex max-w-[calc(100%-1.5rem)] items-center gap-1.5 rounded-[var(--thumbnail-inner-radius)] bg-[var(--color-toggle)] px-3 py-2 text-xs leading-none text-[var(--color-gray-accent)] backdrop-blur">
           <span aria-hidden>🏆</span>
           {awardLabel && <span className="truncate">{awardLabel}</span>}
         </span>
