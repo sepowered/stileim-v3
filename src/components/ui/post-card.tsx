@@ -1,7 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ComponentProps, ElementType, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
+
+import { CardThumbnail } from './card-thumbnail';
 
 type PostCardProps = Omit<ComponentProps<'a'>, 'href'> & {
   href: string;
@@ -15,6 +16,10 @@ type PostCardProps = Omit<ComponentProps<'a'>, 'href'> & {
   topContent?: ReactNode;
   extraContent?: ReactNode;
   imageSizes?: string;
+  surfaceInset?: 'bleed' | 'soft-bleed' | 'aligned';
+  hasAward?: boolean;
+  awardLabel?: string;
+  thumbnailInnerRadiusOffset?: string;
 };
 
 export const PostCard = ({
@@ -29,52 +34,78 @@ export const PostCard = ({
   topContent,
   extraContent,
   imageSizes = '100vw',
+  surfaceInset = 'bleed',
+  hasAward = false,
+  awardLabel,
+  thumbnailInnerRadiusOffset,
   className,
   ...props
 }: PostCardProps) => {
+  const titleSurfaceSpacing =
+    surfaceInset === 'bleed'
+      ? 'px-[0.625rem] mx-[-0.625rem] mb-[-0.125rem]'
+      : surfaceInset === 'soft-bleed'
+        ? 'px-[0.625rem] mx-[-0.25rem] mb-[-0.125rem]'
+        : 'px-0 mx-0 mb-0';
+  const bodySurfaceSpacing =
+    surfaceInset === 'bleed'
+      ? 'px-[0.625rem] mx-[-0.625rem] mb-[-0.125rem]'
+      : surfaceInset === 'soft-bleed'
+        ? 'px-[0.625rem] mx-[-0.25rem] mb-[-0.125rem]'
+        : 'px-0 mx-0 mb-0';
+
   return (
     <Link
       href={href}
       className={twMerge(
         'flex flex-col w-full cursor-pointer',
-        'hover:[&_.title]:bg-[var(--color-gray-hover)]',
-        'hover:[&_.description]:bg-[var(--color-gray-hover)]',
-        'active:[&_.title]:bg-[var(--color-border)]',
-        'active:[&_.description]:bg-[var(--color-border)]',
+        'hover:[&_.hoverable-surface]:bg-[var(--color-gray-hover)]',
+        'active:[&_.hoverable-surface]:bg-[var(--color-border)]',
         className,
       )}
       aria-label={ariaLabel ?? title}
       {...props}
     >
-      <div className="relative w-full aspect-[1.8/1] rounded-[0.875rem] border border-[var(--color-border)] overflow-hidden">
-        <Image
-          className="w-full h-full object-cover object-center"
-          src={coverImage}
-          alt={`${title} Cover Image`}
-          {...(coverImageBlur ? { placeholder: 'blur' as const, blurDataURL: coverImageBlur } : {})}
-          draggable={false}
-          priority={false}
-          quality={100}
-          sizes={imageSizes}
-          fill
-        />
-      </div>
+      <CardThumbnail
+        title={title}
+        coverImage={coverImage}
+        coverImageBlur={coverImageBlur}
+        imageSizes={imageSizes}
+        hasAward={hasAward}
+        awardLabel={awardLabel}
+        innerRadiusOffset={thumbnailInnerRadiusOffset}
+      />
 
       {topContent}
 
-      <TitleTag className="title post-subtitle flex overflow-hidden text-ellipsis line-clamp-2 px-[0.625rem] py-[0.125rem] mt-[1rem] mx-[-0.625rem] mb-[-0.125rem] rounded-[0.5rem] transition-colors duration-250 ease-in-out">
+      <TitleTag
+        className={twMerge(
+          'title hoverable-surface post-subtitle flex overflow-hidden text-ellipsis line-clamp-2 py-[0.125rem] mt-[1rem] rounded-[0.5rem] transition-colors duration-250 ease-in-out',
+          titleSurfaceSpacing,
+        )}
+      >
         {title}
       </TitleTag>
 
       {subtitle && (
-        <p className="subtitle post-description px-[0.625rem] py-[0.125rem] mt-[0.75rem] mx-[-0.625rem] mb-[-0.125rem] rounded-[0.5rem] transition-colors duration-250 ease-in-out line-clamp-2 text-[var(--color-gray-mid)]">
+        <p
+          className={twMerge(
+            'subtitle hoverable-surface post-description py-[0.125rem] mt-[0.75rem] rounded-[0.5rem] transition-colors duration-250 ease-in-out line-clamp-2 text-[var(--color-gray-mid)]',
+            bodySurfaceSpacing,
+          )}
+        >
           {subtitle}
         </p>
       )}
 
       {extraContent}
 
-      <div className="description h4 text-[var(--color-gray-light)] w-fit px-[0.625rem] py-[0.125rem] mt-[1rem] mx-[-0.625rem] mb-[-0.125rem] rounded-[0.5rem] transition-colors duration-250 ease-in-out">
+      <div
+        className={twMerge(
+          'description hoverable-surface h4 text-[var(--color-gray-light)] w-fit py-[0.125rem] mt-[1rem] rounded-[0.5rem] transition-colors duration-250 ease-in-out',
+          bodySurfaceSpacing,
+        )}
+      >
         {meta}
       </div>
     </Link>

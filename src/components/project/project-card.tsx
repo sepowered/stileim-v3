@@ -24,39 +24,27 @@ export const ProjectCard = ({
       <PostCard
         href={`${ROUTES.PROJECTS}/${slug}`}
         ariaLabel={`Read project: ${title}`}
-        className={twMerge(
-          'hover:[&_.project-tag]:bg-[var(--color-gray-hover)]',
-          'active:[&_.project-tag]:bg-[var(--color-border)]',
-          'hover:[&_.project-award]:bg-[var(--color-gray-hover)]',
-          'active:[&_.project-award]:bg-[var(--color-border)]',
-        )}
         titleTag="h3"
         title={title}
         subtitle={description}
         coverImage={coverImage}
         coverImageBlur={coverImageBlur.blur}
         imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        surfaceInset="bleed"
+        hasAward={!hideAward && Boolean(project.awards)}
+        awardLabel={!hideAward ? project.awards : undefined}
+        thumbnailInnerRadiusOffset="0.1875rem"
         topContent={
           <div className="mt-[1rem] flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="project-tag rounded-full border border-[var(--color-border)] px-2 py-1 text-xs font-medium text-[var(--color-gray-mid)] transition-colors duration-250 ease-in-out"
+                className="hoverable-surface rounded-full border border-[var(--color-border)] px-2 py-1 text-xs font-medium text-[var(--color-gray-mid)] transition-colors duration-250 ease-in-out"
               >
                 {tag}
               </span>
             ))}
           </div>
-        }
-        extraContent={
-          !hideAward && project.awards ? (
-            <div className="project-award mt-1 flex items-center gap-2 rounded-lg bg-[var(--color-background05)] px-3 py-1 transition-colors duration-250 ease-in-out">
-              <span className="text-base">🏆</span>
-              <span className="text-sm font-medium text-[var(--color-gray-bold)]">
-                {project.awards}
-              </span>
-            </div>
-          ) : undefined
         }
         meta={
           <>
