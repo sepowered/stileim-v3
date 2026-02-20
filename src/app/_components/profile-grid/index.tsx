@@ -8,7 +8,11 @@ import Card from './card';
 import { ToolsSkillsCard } from './tools-skills-card';
 
 export const ProfileGrid = async () => {
-  const blurDataURL = await createBlur(PROFILE.profileImage);
+  const blurDataURL = await createBlur(METADATA.AUTHOR.PROFILE_IMAGE);
+  const userDetails = [
+    { title: 'Studying', content: METADATA.AUTHOR.STUDYING },
+    { title: 'Location', content: METADATA.AUTHOR.LOCATION },
+  ];
 
   return (
     <section
@@ -39,7 +43,7 @@ export const ProfileGrid = async () => {
                 >
                   <Image
                     className="w-full h-full object-cover"
-                    src={PROFILE.profileImage}
+                    src={METADATA.AUTHOR.PROFILE_IMAGE}
                     alt={`${METADATA.AUTHOR.NAME} profile image`}
                     role="img"
                     placeholder="blur"
@@ -60,7 +64,7 @@ export const ProfileGrid = async () => {
               </div>
 
               <dl className="row-between flex-col h-full items-start">
-                {PROFILE.userDetails.map((item) => (
+                {userDetails.map((item) => (
                   <div key={item.title} className="w-full">
                     <dt className="profile-sub w-full" style={{ color: PROFILE.titleTextColor }}>
                       {item.title}

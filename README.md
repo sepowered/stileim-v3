@@ -13,3 +13,20 @@
 
 Create your blog with ease and let your content take the spotlight. Whether you're a writer, creator, or enthusiast,
 `semantic` provides the tools to establish a compelling and memorable online presence.
+
+## Profile Information
+
+Personal profile content is managed in:
+
+- `src/constants/metadata.ts` -> `METADATA.AUTHOR`
+
+Update these fields to change profile data used across Home/About pages:
+
+- `NAME`
+- `EMAIL`
+- `TWITTER`
+- `PROFILE_IMAGE`
+- `STUDYING`
+- `LOCATION`
+- `BIRTH_DATE`
+- `RESIDENCE`

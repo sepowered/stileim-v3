@@ -2,12 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { createBlur } from '@libs/image';
-import {
-  CalendarIcon,
-  LocationIcon,
-  DownloadIcon,
-  ChevronRightIcon,
-} from '@semantic/components/icon';
+import { DownloadIcon, ChevronRightIcon } from '@semantic/components/icon';
 import { ResumeDownloadButton } from '@semantic/components/resume-download-button';
 import { LinkEmbed } from '@semantic/components/ui/link-embed';
 import { METADATA, PROFILE } from '@semantic/constants';
@@ -17,7 +12,7 @@ import { SchoolAchievements } from './_components/school-achievements';
 import Card from '../_components/profile-grid/card';
 
 const AboutPage = async () => {
-  const blurDataURL = await createBlur(PROFILE.profileImage);
+  const blurDataURL = await createBlur(METADATA.AUTHOR.PROFILE_IMAGE);
 
   return (
     <div className="column pb-[4.0625rem]">
@@ -45,7 +40,7 @@ const AboutPage = async () => {
                     >
                       <Image
                         className="w-full h-full object-cover"
-                        src={PROFILE.profileImage}
+                        src={METADATA.AUTHOR.PROFILE_IMAGE}
                         alt={`${METADATA.AUTHOR.NAME} profile image`}
                         placeholder="blur"
                         blurDataURL={blurDataURL}
@@ -60,29 +55,9 @@ const AboutPage = async () => {
                         {METADATA.AUTHOR.NAME}
                       </h2>
                       <p className="text-base" style={{ color: PROFILE.contentTextColor }}>
-                        Digital Product Planning
+                        {METADATA.AUTHOR.STUDYING}
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                {/* Right: Contact Info */}
-                <div className="flex flex-col items-center tablet:items-end justify-center h-full gap-4">
-                  <div className="flex flex-col items-center tablet:items-end gap-2">
-                    <p
-                      className="flex items-center gap-1.5 text-base"
-                      style={{ color: PROFILE.contentTextColor }}
-                    >
-                      <CalendarIcon size={20} />
-                      2001. 01. 12
-                    </p>
-                    <p
-                      className="flex items-center gap-1.5 text-base"
-                      style={{ color: PROFILE.contentTextColor }}
-                    >
-                      <LocationIcon size={20} />
-                      경기 용인시 기흥구
-                    </p>
                   </div>
                 </div>
               </div>

@@ -33,15 +33,34 @@ const HomePage = () => {
 
   return (
     <>
-      <HeroSection
-        title="borderless,limitless."
-        subtitle={`경계를 넘는 배움과 한계를 넘는 생각으로\n문제를 끝까지 함께하는 기획자 노권후입니다.`}
-        description={`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.`}
-        showLink={true}
-      />
-      <div className="pt-[4.375rem]">
+      <div className="hidden">
+        <HeroSection
+          title="borderless,limitless."
+          subtitle={`경계를 넘는 배움과 한계를 넘는 생각으로\n문제를 끝까지 함께하는 기획자 노권후입니다.`}
+          description={`프로젝트를 화면 너머의 현실 세계의 맥락에서 바라보고,\n기술과 경험을 연결해 문제를 해결하고자 합니다.`}
+          showLink={true}
+        />
+      </div>
+      <div>
         <ProfileGrid />
       </div>
+
+      <section className="column pt-[4.375rem] gap-[1.875rem]" aria-labelledby="updates-heading">
+        <div className="row-between">
+          <h3 id="updates-heading" className="h3 text-[var(--color-gray-light)]">
+            Update
+          </h3>
+          <Link
+            href={ROUTES.POSTS}
+            className="center h4 h-8 px-3 text-[var(--color-gray-light)] border border-[var(--color-border)] rounded-[0.625rem] bg-[var(--color-toggle)] gap-[0.375rem]"
+            aria-label="Expand to see more posts"
+          >
+            Expand
+            <PlusIcon />
+          </Link>
+        </div>
+        <PostGrid posts={posts} />
+      </section>
 
       <section className="column pt-[4.375rem] gap-[1.875rem]" aria-labelledby="projects-heading">
         <div className="row-between">
@@ -62,26 +81,6 @@ const HomePage = () => {
           className="desktop:grid-cols-2 gap-[4.0625rem] [&>li:nth-child(n+5)]:hidden desktop:[&>li:nth-child(n+5)]:flex"
           hideAward={true}
         />
-      </section>
-
-      <section
-        className="column pt-[4.375rem] pb-[4.0625rem] gap-[1.875rem]"
-        aria-labelledby="updates-heading"
-      >
-        <div className="row-between">
-          <h3 id="updates-heading" className="h3 text-[var(--color-gray-light)]">
-            Update
-          </h3>
-          <Link
-            href={ROUTES.POSTS}
-            className="center h4 h-8 px-3 text-[var(--color-gray-light)] border border-[var(--color-border)] rounded-[0.625rem] bg-[var(--color-toggle)] gap-[0.375rem]"
-            aria-label="Expand to see more posts"
-          >
-            Expand
-            <PlusIcon />
-          </Link>
-        </div>
-        <PostGrid posts={posts} />
       </section>
     </>
   );

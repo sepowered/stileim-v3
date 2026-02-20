@@ -1,18 +1,12 @@
 export const PROFILE = {
   cardBackgroundColor: '#DECEEA',
 
-  profileImage: '/static/profile.jpg',
   profileImageShadowColor: 'rgba(59, 34, 73, 0.43)',
   profileImageFilter: '#6c4980',
   authorTextColor: '#3b2249',
 
   titleTextColor: '#ad85c7',
   contentTextColor: '#3b2249',
-
-  userDetails: [
-    { title: 'Studying', content: 'Digital Product Planning' },
-    { title: 'Location', content: 'Seoul, South Korea' },
-  ],
 };
 
 export const PLAYLIST =

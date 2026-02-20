@@ -24,7 +24,10 @@ export const Layout = ({ children }: PropsWithChildren) => {
     >
       <Sidebar />
       <Header />
-      <main className="column pt-[2.65625rem] tablet:pt-[6.25rem]" data-animate={true}>
+      <main
+        className="column pt-[2.65625rem] tablet:pt-[6.25rem] pb-[4.0625rem]"
+        data-animate={true}
+      >
         {children}
       </main>
     </div>

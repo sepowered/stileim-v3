@@ -1,8 +1,8 @@
 export const MENU = [
   { title: '🏠 Home', link: '/' },
   { title: '🎲 About', link: '/about' },
-  { title: '🖥️ Projects', link: '/projects' },
   { title: '📟 Posts', link: '/posts' },
+  { title: '🖥️ Projects', link: '/projects' },
 ] as const;
 
 export const ROUTES = {
